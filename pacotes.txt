@@ -21,6 +21,7 @@ libreoffice-l10n-pt-br
 mint-meta-codecs
 numlockx
 p7zip-full
+python3-dev
 rar
 sassc
 unar
