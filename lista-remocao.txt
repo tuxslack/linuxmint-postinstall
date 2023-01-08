@@ -1,0 +1,12 @@
+bluetooth
+bluez
+celluloid
+drawing
+hexchat
+hypnotix
+lightdm-settings
+orca
+pix
+rhythmbox
+slick-greeter
+warpinator
