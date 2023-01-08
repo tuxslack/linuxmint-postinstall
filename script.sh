@@ -18,11 +18,6 @@ sudo mintupdate-cli upgrade -r -y
 sudo mintupdate-cli upgrade -r -y
 sudo apt upgrade -y
 
-
-#--------------- DESINSTALAR PACOTES DESNECESSÁRIOS - PARTE 1 -----------------#
-sudo apt purge $(cat $SCR_DIRECTORY/lista-remocao.txt) -y
-sudo apt autoremove --purge -y
-
 #--------------------- INSTALAR PACOTES DO REPOSITÓRIO ------------------------#
 echo ""
 echo "INSTALANDO PACOTES DO REPOSITÓRIO..."
@@ -30,6 +25,9 @@ echo ""
 sudo apt install $(cat $SCR_DIRECTORY/pacotes-sem-recommends.txt) --no-install-recommends -y
 sudo apt install $(cat $SCR_DIRECTORY/pacotes.txt) -y
 
+#--------------- DESINSTALAR PACOTES DESNECESSÁRIOS - PARTE 1 -----------------#
+sudo apt purge $(cat $SCR_DIRECTORY/lista-remocao.txt) -y
+sudo apt autoremove --purge -y
 
 #---------------------- INSTALAR PACOTES DO LOCAIS ----------------------------#
 echo ""
