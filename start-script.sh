@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-wget https://github.com/thiagoneo/lmde-postinstall/archive/refs/tags/2023-01-08.tar.gz
-tar -xzvf 2023-01-08.tar.gz
-cd lmde-postinstall-2023-01-08/
+wget https://github.com/thiagoneo/lmde-postinstall/archive/refs/tags/testing-1.tar.gz
+tar -xzvf testing-1.tar.gz
+cd lmde-postinstall-testing-1/
 chmod +x *.sh
 
 bash script.sh
