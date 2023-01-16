@@ -1,5 +1,3 @@
-bluetooth
-bluez
 celluloid
 drawing
 hexchat
