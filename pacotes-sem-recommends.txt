@@ -1,3 +1,4 @@
+breeze-icon-theme
 fonts-comfortaa
 fonts-croscore
 fonts-crosextra-caladea
