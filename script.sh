@@ -93,8 +93,8 @@ ls $SCR_DIRECTORY/packages/*.deb > pacotes-locais.txt
 sudo apt install $(cat $SCR_DIRECTORY/pacotes-locais.txt) --no-install-recommends -y
 ### Remover impressoras adicionadas automaticamente
 case $INSTALL_DRIVERS in
-    0) echo "Nenhuma impressora instalada";;
-    1) sudo lpadmin -x DCPL5652DN ; sudo lpadmin -x HLL6202DW;;
+    0) sudo lpadmin -x DCPL5652DN ; sudo lpadmin -x HLL6202DW;;
+    1) echo "Nenhuma impressora instalada";;
 esac
 
 #---------------- DESINSTALAR PACOTES DESNECESSÁRIOS - PARTE 2 ----------------#
