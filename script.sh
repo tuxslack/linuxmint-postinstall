@@ -127,6 +127,7 @@ sudo mintupdate-automation autoremove enable
 #### Desativar driver problemático do CUPS
 sudo mkdir -p /usr/lib/cups/driver/disabled
 sudo mv /usr/lib/cups/driver/driverless /usr/lib/cups/driver/disabled/
+sudo chown -R $USER:$USER $SCR_DIRECTORY/
 
 #------------------------------------ FIM -------------------------------------#
 kill "$infiloop"
