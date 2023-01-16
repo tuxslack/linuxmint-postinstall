@@ -6,6 +6,7 @@ infiloop=$!
 
 #--------------------------------- VARIÁVEIS ----------------------------------#
 SCR_DIRECTORY=`pwd`
+USER_ID=$(echo $UID)
 
 #------------------- ATUALIZAR BASE DE DADOS DO REPOSITÓRIO -------------------#
 sudo apt update
@@ -127,7 +128,7 @@ sudo mintupdate-automation autoremove enable
 #### Desativar driver problemático do CUPS
 sudo mkdir -p /usr/lib/cups/driver/disabled
 sudo mv /usr/lib/cups/driver/driverless /usr/lib/cups/driver/disabled/
-sudo chown -R $USER:$USER $SCR_DIRECTORY/
+sudo chown -R $USER_ID:$USER_ID $SCR_DIRECTORY/
 
 #------------------------------------ FIM -------------------------------------#
 kill "$infiloop"
