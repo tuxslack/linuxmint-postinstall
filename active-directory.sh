@@ -26,10 +26,10 @@ sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-com
 ### Comandos TESTE
 echo "sudo realm join -U $USUARIO $DOMINIO"
 echo "Senha para $USUARIO: "
-read SENHA
+read -s SENHA
 
 ### Comando original
-sudo realm join -U $USUARIO $DOMINIO
+# sudo realm join -U $USUARIO $DOMINIO
 
 sudo bash -c "cat > /usr/share/pam-configs/mkhomedir" <<EOF
 Name: activate mkhomedir
