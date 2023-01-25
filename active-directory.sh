@@ -2,7 +2,7 @@
 
 
 sudo apt -y update
-sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
+sudo apt -y install dialog realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 
 DOMINIO=$(\
     dialog --erase-on-exit --no-cancel --title "Configurar Active Directory"\
