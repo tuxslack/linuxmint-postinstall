@@ -35,14 +35,14 @@ case $INSTALL_DRIVERS in
     255) echo "[ESC] key pressed.";;
 esac
 
-#---------------------------- SUPORTE A BLUETOOTH -----------------------------#
-dialog --erase-on-exit --yesno "Deseja mater o suporte a bluetooth?" 8 60
-BLUETOOTH=$?
-case $BLUETOOTH in
-    0) echo "O suporte a bluetooth será mantido";;
-    1) echo "Você escolheu remover o suporte a bluetooth" ; echo "bluetooth" >> $SCR_DIRECTORY/lista-remocao.txt ; echo "bluez" >> $SCR_DIRECTORY/lista-remocao.txt;;
-    255) echo "[ESC] key pressed.";;
-esac
+# #---------------------------- SUPORTE A BLUETOOTH -----------------------------#
+# dialog --erase-on-exit --yesno "Deseja mater o suporte a bluetooth?" 8 60
+# BLUETOOTH=$?
+# case $BLUETOOTH in
+#     0) echo "O suporte a bluetooth será mantido";;
+#     1) echo "Você escolheu remover o suporte a bluetooth" ; echo "bluetooth" >> $SCR_DIRECTORY/lista-remocao.txt ; echo "bluez" >> $SCR_DIRECTORY/lista-remocao.txt;;
+#     255) echo "[ESC] key pressed.";;
+# esac
 
 #------------------------------ ACTIVE DIRECTORY ------------------------------#
 dialog --erase-on-exit --yesno "Deseja ingressar este computador no Active Directory Domain?" 8 60
