@@ -1,0 +1,8 @@
+{
+    "policies":
+    {
+        "DisableAppUpdate": true,
+        "PasswordManagerEnabled": false,
+        "OverrideFirstRunPage": ""
+    }
+}
