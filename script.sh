@@ -110,8 +110,14 @@ cd "${SCR_DIRECTORY}"/
 
 sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 \cp -rf "${SCR_DIRECTORY}"/system-files/etc/lightdm/ /etc/
+\cp -rf "${SCR_DIRECTORY}"/system-files/etc/firefox/ /etc/
+\cp -rf "${SCR_DIRECTORY}"/system-files/etc/opt/ /etc/
 \cp -rf "${SCR_DIRECTORY}"/system-files/etc/skel/ /etc/
 \cp -rf "${SCR_DIRECTORY}"/system-files/etc/dconf/ /etc/
+chmod -R 755 /etc/firefox/
+chmod 644 /etc/firefox/policies/policies.json
+chmod -R 755 /etc/opt/
+chmod 644 /etc/opt/chrome/policies/*/*.json
 chmod 755 /etc/dconf/profile/
 chmod 755 /etc/dconf/db/local.d/
 dconf update
