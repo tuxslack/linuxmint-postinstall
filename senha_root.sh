@@ -6,39 +6,50 @@
 # E-mail: sousathiago@protonmail.com             #
 ##################################################
 
-# Verificar se o usuário é o root
+
+# Verificar se o usuário é o Root
+
 if [[ $EUID -ne 0 ]]; then
-   echo "Este script precisa ser executado como root."
+
+   yad --center --title "Erro" --text "Este script precisa ser executado como Root." --button=OK:0 --width 400 --height 100
+
    exit 1
 fi
 
-# Instalar o pacote dialog, se não for encontrado no sistema
-if ! command -v dialog &> /dev/null; then
-    sudo apt -y install dialog
+# Instalar o pacote yad, se não for encontrado no sistema
+
+if ! command -v yad &> /dev/null; then
+
+    sudo apt -y install yad
+
 fi
 
+
 ALT=1
+
 while [ $ALT = 1 ]
 do
     SENHA_ROOT=$(\
-        dialog --no-cancel --title "Definir senha do root"\
-            --insecure --clear --passwordbox "Insira uma senha para o usuário root:" 8 45\
-        3>&1 1>&2 2>&3 3>&- \
-    )
+        yad --center --no-buttons --title "Definir senha do Root"\
+            --form --field="Insira uma senha para o usuário Root":H  --width 400 --height 150\
+            --password)
+
     CONFIRMA_SENHA_ROOT=$(\
-        dialog --no-cancel --title "Definir senha do root"\
-            --insecure --clear --passwordbox "Confirme a senha, digitando-a mais uma vez:" 8 45\
-        3>&1 1>&2 2>&3 3>&- \
-    )
-    if [ $SENHA_ROOT = $CONFIRMA_SENHA_ROOT ]; then
+        yad --center --no-buttons --title "Definir senha do Root"\
+            --form --field="Confirme a senha, digitando-a mais uma vez":H --width 400 --height 150\
+            --password)
+
+    if [ "$SENHA_ROOT" = "$CONFIRMA_SENHA_ROOT" ]; then
         ALT=0
     else
-        dialog --no-cancel --title "Definir senha do root"\
-            --msgbox "As senhas não são iguais. Tente novamente." 6 45
+        yad --center --title "Erro" --text "As senhas não são iguais. Tente novamente." --button=OK:0 --width 400 --height 100
     fi
+
 done
+
 echo "root:$SENHA_ROOT" | chpasswd
+
 if [ $? = 0 ]; then
-    dialog --no-cancel --title "Definir senha do root"\
-            --msgbox "Senha alterada com sucesso!" 6 40
+    yad --center --title "Sucesso" --text "Senha alterada com sucesso!" --button=OK:0 --width 400 --height 100
 fi
+
